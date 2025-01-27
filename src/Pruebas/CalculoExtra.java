@@ -29,4 +29,30 @@ public class CalculoExtra {
 		//Dejando así uno menos a la suma
 		return dato%10 + obtenerSuma(dato/10);
 	}
+	
+	
+	//Para este ejercicio, no he tenido en consideración que el String "0" se considere como 0.
+	//No lo aclara en el enunciado.
+	public Object[] moverCeros2(Object[] objetos) {
+			
+		Integer tam = objetos.length;
+		Integer ceros = tam - 1;
+		Integer index = 0;
+		Object[] resultado = new Object[tam];
+		
+		
+		for (Object obj : objetos) {
+            if (obj instanceof Integer && (Integer) obj == 0) {
+            	System.out.println(ceros);
+            	resultado[ceros] = 0;
+                ceros--;
+            } else {
+            	System.out.println(index);
+            	resultado[index] = obj;
+            	index++;
+            }
+        }
+		
+		return resultado;
+	}
 }
