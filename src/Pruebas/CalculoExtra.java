@@ -32,22 +32,24 @@ public class CalculoExtra {
 	
 	
 	//Para este ejercicio, no he tenido en consideración que el String "0" se considere como 0.
-	//No lo aclara en el enunciado.
+	//No se aclara en el enunciado.
 	public Object[] moverCeros2(Object[] objetos) {
 			
 		Integer tam = objetos.length;
+		//Índice final para poner los 0s
 		Integer ceros = tam - 1;
+		//Índice inicial para poner los valores por orden (excluyendo 0s)
 		Integer index = 0;
 		Object[] resultado = new Object[tam];
 		
-		
+		//Bucle para recorrer los datos
 		for (Object obj : objetos) {
             if (obj instanceof Integer && (Integer) obj == 0) {
-            	System.out.println(ceros);
+            	//El 0 se agrega al final.
             	resultado[ceros] = 0;
                 ceros--;
             } else {
-            	System.out.println(index);
+            	//Se agrega el elemento y se suma 1 al índice.
             	resultado[index] = obj;
             	index++;
             }

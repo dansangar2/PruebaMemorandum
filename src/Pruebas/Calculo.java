@@ -8,7 +8,7 @@ public class Calculo {
 	public String calcularIMC(Integer peso, Integer altura) {
 		//Calculamos la masa, siendo peso/altura^2
 		Double imc = peso/Math.pow(altura, 2);
-		System.out.println(imc);
+
 		//Devolvemos el resultado según el valor de la masa.
 		//Como se asume que si no pasa por el primer if, el 2o debe estar
 		//por encima de 18.5, por lo que no es necesario en los ifelse comprobar
