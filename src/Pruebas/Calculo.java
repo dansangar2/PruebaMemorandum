@@ -48,6 +48,8 @@ public class Calculo {
 		return dato%10 + obtenerSuma(dato/10);
 	}
 	
+	//Para este ejercicio, no he tenido en consideración que el String "0" se considere como 0.
+	//No lo aclara en el enunciado.
 	public Object[] moverCeros(Object[] objetos) {
 		
 		//Indica cuantos 0s hay en el array.
