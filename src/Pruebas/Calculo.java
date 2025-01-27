@@ -28,24 +28,26 @@ public class Calculo {
 	public Integer sumaDigito(Integer numero) {
 		
 		Integer resultado = 0;
+		//Valor guardará la división de i, para calcular la suma de los números de mas de 1 dígito
+		int valor = 0;
+		//Suma obtendrá el valor de la suma de los dígitos de un número > 9
+		int suma;
 		
 		//El bucle suma todos los digitos desde 1 hasta N.
 		for (int i = 1; i <= numero; i++) {
-			//obtenerSuma obtiene la suma de los dígitos con los valores de N > 9.
-			resultado += obtenerSuma(i);
+			
+			valor = i;
+			suma = 0;
+			//Mientras valor/10 no de 0, significa que sigue habiendo dígitos que sumar.
+			while(valor!=0) {
+				suma += valor%10;
+				valor = valor/10;
+			}
+			
+			resultado += suma;
+			
 		}
 		return resultado;
-	}
-	
-	private Integer obtenerSuma(Integer dato) {
-		//Cuando es 0 significa que ya no hay nada que sumar, y por ende, el bucle acaba.
-		if(dato == 0) {
-			return dato;
-		}
-		//De forma recursiva suma los valores de los dígitos del número.
-		//El módulo obtiene el último valor, y la división remueve el último valor.
-		//Dejando así uno menos a la suma
-		return dato%10 + obtenerSuma(dato/10);
 	}
 	
 	//Para este ejercicio, no he tenido en consideración que el String "0" se considere como 0.
