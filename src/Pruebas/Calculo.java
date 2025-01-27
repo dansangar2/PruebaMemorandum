@@ -1,6 +1,5 @@
 package Pruebas;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
@@ -13,7 +12,7 @@ public class Calculo {
 		//Devolvemos el resultado según el valor de la masa.
 		//Como se asume que si no pasa por el primer if, el 2o debe estar
 		//por encima de 18.5, por lo que no es necesario en los ifelse comprobar
-		//si es mayor al valor que tiene por encima.
+		//si es mayor al valor que tiene por encima. Lo mismo para los demás.
 		if(imc<=18.5) {
 			return "Infrapeso";
 		} else if(imc <= 25.0) {
@@ -38,12 +37,15 @@ public class Calculo {
 			
 			valor = i;
 			suma = 0;
-			//Mientras valor/10 no de 0, significa que sigue habiendo dígitos que sumar.
+			//Mientras valor/10 no sea 0, significa que sigue habiendo dígitos que sumar.
 			while(valor!=0) {
+				//Suma el siguiente dígito del número
 				suma += valor%10;
+				//Elimina el último dígito para sumar el siguiente
 				valor = valor/10;
 			}
 			
+			//Suma el resultado.
 			resultado += suma;
 			
 		}
@@ -51,7 +53,7 @@ public class Calculo {
 	}
 	
 	//Para este ejercicio, no he tenido en consideración que el String "0" se considere como 0.
-	//No lo aclara en el enunciado.
+	//No se aclara en el enunciado.
 	public Object[] moverCeros(Object[] objetos) {
 		
 		//Indica cuantos 0s hay en el array.
@@ -59,12 +61,12 @@ public class Calculo {
                 .filter(e -> e instanceof Integer && (Integer) e == 0)
                 .count();
 		
-		//Obtiene el array filtrando los que no son 0.
+		//Obtiene el array filtrando los que no son 0s.
 		Object[] sinCeros = Arrays.stream(objetos)
                 .filter(e -> !(e instanceof Integer && (Integer) e == 0))
                 .toArray();
 		
-		//Une un nuevo array con un numero de 0 igual al Long 0 con el array sin 0s.
+		//Une un nuevo array con un número de 0 igual al Long 0 con el array sin 0s.
 		Object[] resultado = Stream.concat(
                 Arrays.stream(sinCeros), 
                 Stream.generate(() -> 0).limit(ceros)

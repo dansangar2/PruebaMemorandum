@@ -13,7 +13,7 @@ public class Test {
 		CalculoExtra ce = new CalculoExtra();
 		
 		//Prueba del calculo IMC
-		System.out.println(c.calcularIMC(10, 5) + "\n");
+		System.out.println(c.calcularIMC(50, 500) + "\n");
 		
 		//Prueba del calculo de digitos
 		System.out.println(c.sumaDigito(4));
@@ -31,6 +31,8 @@ public class Test {
 		System.out.println(ce.sumaDigito2(10));
 		System.out.println(ce.sumaDigito2(12) + "\n");
 		
+		
+				
 	}
 
 }
